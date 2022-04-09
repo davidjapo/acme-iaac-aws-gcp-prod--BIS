@@ -28,7 +28,7 @@ pipeline {
             steps {
                 timeout(time: 10, unit: 'MINUTES') {
                     input message: 'Are you sure to DEPLOY?', yes: 'Yes, deploy the Storage device.'
-                        sh 'terraform apply -var-file=$FILENAME_TFVARS_PROD'
+                        sh 'ls -ltrahF && echo $FILENAME_TFVARS_PROD && terraform apply -var-file=$FILENAME_TFVARS_PROD'
                 }
             }
         }
